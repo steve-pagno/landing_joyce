@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Joyce Bratefiche Teiga | Advocacia</title>
+    <!-- Fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Cor e Fonte */
+        :root {
+            --primary-color: #0A192F; /* Azul Marinho Escuro */
+            --secondary-color: #D4AF37; /* Dourado */
+            --text-color: #333333;
+            --text-light: #666666;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 15px 0 25px 0;
+        }
+
+        .divider.center {
+            margin: 15px auto 25px auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #bda030;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-large {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Placeholders de Imagem */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            border: 2px dashed #a0a0a0;
+            color: #666;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--primary-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img{
+            width: 25%;
+        }
+
+        .logo h2 {
+            color: var(--secondary-color);
+            margin-bottom: -5px;
+            font-size: 1.5rem;
+        }
+
+        .logo span {
+            color: var(--white);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 180px 0 100px;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), url('placeholder-office.jpg') center/cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        /* Sobre a Advogada */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Diferenciais */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .features-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        .features-header h2 {
+            font-size: 2.2rem;
+        }
+
+        .features-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .features-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .features-image {
+            flex: 1;
+        }
+
+        /* Áreas de Atuação */
+        .services {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #050d1a;
+            color: #a0a0a0;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #1a2a42;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-container, .features-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 20px 0;
+                border-top: 1px solid #1a2a42;
+            }
+
+            .nav-menu.active {
+                display: block;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .header .btn-outline {
+                display: none; 
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="" srcset="">
+                <h2>Joyce Bratefiche</h2>
+                <span>Advocacia</span>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Dra. Joyce</a></li>
+                    <li><a href="#diferenciais">O Escritório</a></li>
+                    <li><a href="#atuacao">Áreas de Atuação</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/5511930151283" class="btn btn-outline" target="_blank">Falar no WhatsApp</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+                &#9776;
+            </button>
+        </div>
+    </header>
+
+    <!-- Primeira Dobra (Hero) -->
+    <section class="hero" id="inicio">
+        <div class="hero-background"></div> 
+        <div class="container hero-content">
+            <h1>Defesa Estratégica dos Seus Direitos</h1>
+            <p>Atendimento jurídico humanizado e eficiente, focado em encontrar as melhores soluções para o seu caso.</p>
+            <a href="#contato" class="btn btn-primary">Analisar Meu Caso Agora</a>
+        </div>
+    </section>
+
+    <!-- Sobre a Advogada -->
+    <section class="about" id="sobre">
+        <div class="container about-container">
+            <div class="about-image">
+                <!-- ESPAÇO PARA A FOTO DA DRA. JOYCE -->
+                <div class="image-placeholder">
+                    <img src="img/perfil.jpeg" alt="" srcset="">
+                </div>
+            </div>
+            <div class="about-text">
+                <h2>Conheça a Dra. Joyce Bratefiche Teiga</h2>
+                <div class="divider"></div>
+                <p><strong>Joyce Bratefiche Teiga</strong> é advogada pós-graduada em Direito e Processo do Trabalho, com atuação especializada nas áreas Trabalhista, Cível e Previdenciária.</p>
+                <p>Oferece atendimento jurídico estratégico, humanizado e eficiente, sempre com foco na defesa dos direitos de seus clientes e na busca das melhores soluções para cada caso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais do Escritório -->
+    <section class="features" id="diferenciais">
+        <div class="container">
+            <div class="features-header">
+                <h2>Suporte Jurídico de Excelência em Todo o Brasil</h2>
+                <div class="divider center"></div>
+                <p>Conta com equipe técnica especializada e atendimento 100% online, proporcionando praticidade, agilidade e suporte jurídico de excelência para clientes em todo o Brasil.</p>
+            </div>
+            
+            <div class="features-content">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚖️</div>
+                        <div>
+                            <h3>Especialização</h3>
+                            <p>Equipe técnica focada na melhor estratégia jurídica para o seu caso.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💻</div>
+                        <div>
+                            <h3>Atendimento 100% Online</h3>
+                            <p>Praticidade e agilidade para clientes em todo o Brasil, sem fronteiras.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <div>
+                            <h3>Atendimento Humanizado</h3>
+                            <p>Foco total na defesa dos seus direitos de forma transparente e acolhedora.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section class="services" id="atuacao">
+        <div class="container">
+            <h2>Nossas Especialidades</h2>
+            <div class="divider center"></div>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Direito Trabalhista</h3>
+                    <p>Defesa dos direitos do trabalhador: reversão de justa causa, horas extras, rescisão indireta, assédio moral e doenças ocupacionais.</p>
+                </div>
+                <div class="card">
+                    <h3>Direito Cível</h3>
+                    <p>Atuação em indenizações, revisão de contratos, direito do consumidor e resolução de conflitos patrimoniais.</p>
+                </div>
+                <div class="card">
+                    <h3>Direito Previdenciário</h3>
+                    <p>Encaminhamento de aposentadorias, auxílio-doença, BPC/LOAS e planejamento e revisões de benefícios do INSS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada Final (CTA) -->
+    <section class="cta" id="contato">
+        <div class="container text-center">
+            <h2>Não deixe seus direitos para depois.</h2>
+            <p>Nossa equipe técnica especializada está pronta para ouvir você e encontrar a melhor solução.</p>
+            <a href="https://wa.me/5511930151283" class="btn btn-primary btn-large" target="_blank">Agendar Minha Consulta Online</a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Bratefiche Teiga Advocacia</h3>
+                <p>OAB/UF XX.XXX</p>
+            </div>
+            <div class="footer-contact">
+                <p>Email: contato@brateficheteiga.com.br</p>
+                <p>WhatsApp: (11) 93015-1283</p>
+                <p>Atendimento em todo o Brasil</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bratefiche Teiga Advocacia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menu Mobile Toggle
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Fechar menu mobile ao clicar em um link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            // Smooth Scrolling para âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Compensar o header fixo (aprox 70px)
+                        const headerOffset = 70;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
