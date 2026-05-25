@@ -3,597 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Joyce Bratefiche Teiga | Advocacia</title>
-    <!-- Fonte do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Joyce Bratefiche | Advocacia & Consultoria Jurídica Trabalhista</title>
     
-    <style>
-        /* Variáveis de Cor e Fonte */
-        :root {
-            --primary-color: #0A192F; /* Azul Marinho Escuro */
-            --secondary-color: #D4AF37; /* Dourado */
-            --text-color: #333333;
-            --text-light: #666666;
-            --bg-light: #F8F9FA;
-            --white: #FFFFFF;
-            
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Roboto', sans-serif;
-        }
-
-        /* Reset Básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: var(--font-heading);
-            color: var(--primary-color);
-        }
-
-        a {
-            text-decoration: none;
-            transition: 0.3s ease;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .divider {
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 15px 0 25px 0;
-        }
-
-        .divider.center {
-            margin: 15px auto 25px auto;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Botões */
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #bda030;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--secondary-color);
-            border: 1px solid var(--secondary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-large {
-            padding: 15px 40px;
-            font-size: 1.1rem;
-        }
-
-        /* Placeholders de Imagem */
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            min-height: 400px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            border: 2px dashed #a0a0a0;
-            color: #666;
-            font-weight: bold;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Header */
-        .header {
-            background-color: var(--primary-color);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 0;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img{
-            width: 25%;
-        }
-
-        .logo h2 {
-            color: var(--secondary-color);
-            margin-bottom: -5px;
-            font-size: 1.5rem;
-        }
-
-        .logo span {
-            color: var(--white);
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-menu ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-menu a {
-            color: var(--white);
-            font-size: 0.95rem;
-        }
-
-        .nav-menu a:hover {
-            color: var(--secondary-color);
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--white);
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding: 180px 0 100px;
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), url('placeholder-office.jpg') center/cover;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-        }
-
-        .hero h1 {
-            color: var(--white);
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #e0e0e0;
-        }
-
-        /* Sobre a Advogada */
-        .about {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-image {
-            flex: 1;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 2.2rem;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        /* Diferenciais */
-        .features {
-            padding: 80px 0;
-            background-color: var(--bg-light);
-        }
-
-        .features-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px auto;
-        }
-
-        .features-header h2 {
-            font-size: 2.2rem;
-        }
-
-        .features-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .features-list {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .feature-item {
-            display: flex;
-            gap: 20px;
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-        }
-
-        .feature-item h3 {
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-        }
-
-        .features-image {
-            flex: 1;
-        }
-
-        /* Áreas de Atuação */
-        .services {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: 2.2rem;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background-color: var(--bg-light);
-            padding: 40px 30px;
-            border-radius: 8px;
-            border-top: 4px solid var(--secondary-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 80px 0;
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .cta h2 {
-            color: var(--white);
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #050d1a;
-            color: #a0a0a0;
-            padding: 40px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-info h3 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid #1a2a42;
-            padding-top: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .about-container, .features-content {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-color);
-                padding: 20px 0;
-                border-top: 1px solid #1a2a42;
-            }
-
-            .nav-menu.active {
-                display: block;
-            }
-
-            .nav-menu ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .header .btn-outline {
-                display: none; 
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Escritório de Advocacia especializado em Direito Trabalhista. Garanta seus direitos com um atendimento humanizado, ágil e focado em resultados.">
+    <meta name="keywords" content="advogado trabalhista, direito do trabalho, rescisão de contrato, horas extras, assédio moral, demissão injusta, advogado sp">
+    <meta name="author" content="Joyce Bratefiche Advocacia">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="img/logo.png" alt="" srcset="">
-                <h2>Joyce Bratefiche</h2>
-                <span>Advocacia</span>
-            </div>
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            
+            
             <nav class="nav-menu" id="nav-menu">
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Dra. Joyce</a></li>
-                    <li><a href="#diferenciais">O Escritório</a></li>
-                    <li><a href="#atuacao">Áreas de Atuação</a></li>
-                </ul>
+                <a href="#inicio" class="nav-link active">Início</a>
+                <a href="#situacoes" class="nav-link">Sua Situação</a>
+                <a href="#atuacao" class="nav-link">Áreas de Atuação</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#depoimentos" class="nav-link">Depoimentos</a>
+                <a href="#contato" class="nav-link">Contato</a>
             </nav>
-            <a href="https://wa.me/5511930151283" class="btn btn-outline" target="_blank">Falar no WhatsApp</a>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
-                &#9776;
+
+            <a href="https://wa.me/5511930151283?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20consulta%20jur%C3%ADdica%20trabalhista." target="_blank" class="btn btn-nav">
+                <span>FALAR COM UMA ADVOGADA</span>
+                <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                </svg>
+            </a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="burger" id="burger" aria-label="Abrir menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
             </button>
         </div>
     </header>
 
-    <!-- Primeira Dobra (Hero) -->
+    <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-background"></div> 
-        <div class="container hero-content">
-            <h1>Defesa Estratégica dos Seus Direitos</h1>
-            <p>Atendimento jurídico humanizado e eficiente, focado em encontrar as melhores soluções para o seu caso.</p>
-            <a href="#contato" class="btn btn-primary">Analisar Meu Caso Agora</a>
-        </div>
-    </section>
-
-    <!-- Sobre a Advogada -->
-    <section class="about" id="sobre">
-        <div class="container about-container">
-            <div class="about-image">
-                <!-- ESPAÇO PARA A FOTO DA DRA. JOYCE -->
-                <div class="image-placeholder">
-                    <img src="img/perfil.jpeg" alt="" srcset="">
+        <div class="hero-container">
+            <div class="hero-content animate-on-scroll">
+                <div class="hero-tagline">
+                    <span class="tag-line"></span>
+                    <span class="tag-text">ADVOCACIA TRABALHISTA</span>
                 </div>
-            </div>
-            <div class="about-text">
-                <h2>Conheça a Dra. Joyce Bratefiche Teiga</h2>
-                <div class="divider"></div>
-                <p><strong>Joyce Bratefiche Teiga</strong> é advogada pós-graduada em Direito e Processo do Trabalho, com atuação especializada nas áreas Trabalhista, Cível e Previdenciária.</p>
-                <p>Oferece atendimento jurídico estratégico, humanizado e eficiente, sempre com foco na defesa dos direitos de seus clientes e na busca das melhores soluções para cada caso.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Diferenciais do Escritório -->
-    <section class="features" id="diferenciais">
-        <div class="container">
-            <div class="features-header">
-                <h2>Suporte Jurídico de Excelência em Todo o Brasil</h2>
-                <div class="divider center"></div>
-                <p>Conta com equipe técnica especializada e atendimento 100% online, proporcionando praticidade, agilidade e suporte jurídico de excelência para clientes em todo o Brasil.</p>
+                <h1 class="hero-title">
+                    Seus direitos trabalhistas <span class="title-highlight">foram desrespeitados?</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Nós lutamos para garantir cada centavo que é seu por direito.
+                </p>
+                <p class="hero-description">
+                    Atendimento humanizado, estratégico e especializado em ações trabalhistas, cíveis e previdenciárias.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://wa.me/5511930151283?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20consulta%20jur%C3%ADdica%20trabalhista." target="_blank" class="btn btn-primary">
+                        <span>FALAR COM UMA ADVOGADA</span>
+                        <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#situacoes" class="btn btn-secondary">
+                        <span>ANALISAR MEU CASO</span>
+                    </a>
+                </div>
             </div>
             
-            <div class="features-content">
-                <div class="features-list">
-                    <div class="feature-item">
-                        <div class="feature-icon">⚖️</div>
-                        <div>
-                            <h3>Especialização</h3>
-                            <p>Equipe técnica focada na melhor estratégia jurídica para o seu caso.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">💻</div>
-                        <div>
-                            <h3>Atendimento 100% Online</h3>
-                            <p>Praticidade e agilidade para clientes em todo o Brasil, sem fronteiras.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🤝</div>
-                        <div>
-                            <h3>Atendimento Humanizado</h3>
-                            <p>Foco total na defesa dos seus direitos de forma transparente e acolhedora.</p>
-                        </div>
-                    </div>
+            <div class="hero-image-container animate-on-scroll">
+                <div class="hero-image-wrapper">
+                    <img src="assets/images/imagem1.jpeg" alt="Joyce Bratefiche" class="hero-img">
+                    <div class="hero-watermark">JB</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Pillars -->
+        <div class="hero-pillars">
+            <div class="pillar animate-on-scroll">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 11c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 13c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z" />
+                        <path d="M12 11a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" stroke="var(--gold)"/>
+                    </svg>
+                </div>
+                <div class="pillar-text">
+                    <h3>Atendimento humanizado</h3>
+                </div>
+            </div>
+            <div class="pillar animate-on-scroll">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        <circle cx="12" cy="12" r="3" stroke="var(--gold)" stroke-width="1"/>
+                    </svg>
+                </div>
+                <div class="pillar-text">
+                    <h3>Análise rápida de seu caso</h3>
+                </div>
+            </div>
+            <div class="pillar animate-on-scroll">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </div>
+                <div class="pillar-text">
+                    <h3>Especialistas em Direito do Trabalho</h3>
+                </div>
+            </div>
+            <div class="pillar animate-on-scroll">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <path d="M8 21h8M12 17v4" />
+                        <path d="M12 7a2 2 0 100-4 2 2 0 000 4z" stroke="var(--gold)"/>
+                    </svg>
+                </div>
+                <div class="pillar-text">
+                    <h3>Atendimento online em todo Brasil</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Áreas de Atuação -->
-    <section class="services" id="atuacao">
+    <!-- Situations Section (Dark Theme) -->
+    <section class="situations" id="situacoes">
         <div class="container">
-            <h2>Nossas Especialidades</h2>
-            <div class="divider center"></div>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Direito Trabalhista</h3>
-                    <p>Defesa dos direitos do trabalhador: reversão de justa causa, horas extras, rescisão indireta, assédio moral e doenças ocupacionais.</p>
+            <div class="section-header dark animate-on-scroll">
+                <span class="gold-line"></span>
+                <h2>VOCÊ PASSOU POR ALGUMA DESSAS SITUAÇÕES?</h2>
+                <span class="gold-line"></span>
+            </div>
+
+            <div class="situations-grid">
+                <!-- Situation 1 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" />
+                            <path d="M19 12h3M19 9h3M19 15h3" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>DEMISSÃO INJUSTA</h3>
                 </div>
-                <div class="card">
-                    <h3>Direito Cível</h3>
-                    <p>Atuação em indenizações, revisão de contratos, direito do consumidor e resolução de conflitos patrimoniais.</p>
+                <!-- Situation 2 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 6v6l4 2" stroke="var(--gold)"/>
+                            <path d="M12 18h.01" stroke="var(--gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>HORAS EXTRAS NÃO PAGAS</h3>
                 </div>
-                <div class="card">
-                    <h3>Direito Previdenciário</h3>
-                    <p>Encaminhamento de aposentadorias, auxílio-doença, BPC/LOAS e planejamento e revisões de benefícios do INSS.</p>
+                <!-- Situation 3 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                            <path d="M12 9v4" stroke="var(--gold)"/>
+                            <path d="M12 17h.01" stroke="var(--gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>ASSÉDIO MORAL</h3>
+                </div>
+                <!-- Situation 4 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                            <path d="M12 18a6 6 0 100-12 6 6 0 000 12z" stroke="var(--gold)"/>
+                            <path d="M12 8a2 2 0 100-4 2 2 0 000 4z" />
+                        </svg>
+                    </div>
+                    <h3>GESTANTE DISPENSADA</h3>
+                </div>
+                <!-- Situation 5 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                            <path d="M14 2v6h6M12 18v-6M9 15h6" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>TRABALHO SEM REGISTRO</h3>
+                </div>
+                <!-- Situation 6 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
+                            <path d="M17 21v-8H7v8M7 3v5h8" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>RESCISÃO ERRADA</h3>
+                </div>
+                <!-- Situation 7 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18" />
+                            <circle cx="12" cy="16" r="2" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>VERBAS RESCISÓRIAS ATRASADAS</h3>
+                </div>
+                <!-- Situation 8 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 12h6M12 9v6" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>ACIDENTE DE TRABALHO</h3>
+                </div>
+                <!-- Situation 9 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M12 8v5M12 16h.01" stroke="var(--gold)" stroke-dasharray="1 1" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>INSALUBRIDADE E PERICULOSIDADE</h3>
+                </div>
+                <!-- Situation 10 -->
+                <div class="situation-card animate-on-scroll">
+                    <div class="situation-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" />
+                            <circle cx="19" cy="8" r="3" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>PEJOTIZAÇÃO</h3>
+                </div>
+            </div>
+
+            <div class="situations-cta animate-on-scroll">
+                <p>SEU EMPREGADOR PODE ESTAR VIOLANDO SEUS DIREITOS.</p>
+                <a href="https://wa.me/5511930151283?text=Ol%C3%A1%2C%20estou%20sofrendo%20uma%20das%20situa%C3%A7%C3%B5es%20listadas%20e%20gostaria%20de%20ajuda." target="_blank" class="btn btn-primary btn-large">
+                    <span>QUERO FALAR COM UMA ESPECIALISTA</span>
+                    <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas of Expertise Section -->
+    <section class="expertise" id="atuacao">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>ÁREAS DE ATUAÇÃO</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="expertise-grid">
+                <!-- Card 1 -->
+                <div class="expertise-card animate-on-scroll">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="7" width="20" height="14" rx="2" />
+                                <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" stroke="var(--gold)"/>
+                            </svg>
+                        </div>
+                        <h3>DIREITO TRABALHISTA</h3>
+                    </div>
+                    <ul class="card-list">
+                        <li><span>Rescisão indireta</span></li>
+                        <li><span>Horas extras</span></li>
+                        <li><span>Vínculo empregatício</span></li>
+                        <li><span>Gestante</span></li>
+                        <li><span>Insalubridade</span></li>
+                        <li><span>Assédio moral</span></li>
+                        <li><span>Verbas rescisórias</span></li>
+                        <li><span>Acidente de trabalho</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="expertise-card animate-on-scroll">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2v20M20 7H4M20 7c0 3-4 5-8 5s-8-2-8-5M20 17H4M20 17c0 3-4 5-8 5s-8-2-8-5" stroke="var(--gold)"/>
+                            </svg>
+                        </div>
+                        <h3>DIREITO CÍVEL</h3>
+                    </div>
+                    <ul class="card-list">
+                        <li><span>Indenizações</span></li>
+                        <li><span>Negativação indevida</span></li>
+                        <li><span>Danos morais</span></li>
+                        <li><span>Contratos</span></li>
+                        <li><span>Defesa do consumidor</span></li>
+                        <li><span>Responsabilidade civil</span></li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="expertise-card animate-on-scroll">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" />
+                                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="var(--gold)"/>
+                            </svg>
+                        </div>
+                        <h3>DIREITO PREVIDENCIÁRIO</h3>
+                    </div>
+                    <ul class="card-list">
+                        <li><span>Aposentadoria</span></li>
+                        <li><span>Auxílio-doença</span></li>
+                        <li><span>BPC/LOAS</span></li>
+                        <li><span>Revisão de benefícios</span></li>
+                        <li><span>Planejamento previdenciário</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Chamada Final (CTA) -->
-    <section class="cta" id="contato">
-        <div class="container text-center">
-            <h2>Não deixe seus direitos para depois.</h2>
-            <p>Nossa equipe técnica especializada está pronta para ouvir você e encontrar a melhor solução.</p>
-            <a href="https://wa.me/5511930151283" class="btn btn-primary btn-large" target="_blank">Agendar Minha Consulta Online</a>
+    <!-- About Us Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <div class="about-img-wrapper">
+                        <img src="assets/images/imagem2.jpeg" alt="Dra. Joyce Bratefiche" class="about-img">
+                        <div class="about-watermark">JB</div>
+                    </div>
+                </div>
+                
+                <div class="about-content animate-on-scroll">
+                    <h2>ADVOCACIA ESTRATÉGICA,<br>HUMANA E FOCADA EM RESULTADOS.</h2>
+                    <div class="gold-bar"></div>
+                    <p>
+                        O escritório <strong>Joyce Bratefiche Advocacia & Consultoria Jurídica</strong> atua com excelência na defesa dos direitos dos trabalhadores, consumidores e segurados previdenciários.
+                    </p>
+                    <p>
+                        Com atendimento personalizado e atuação técnica altamente estratégica, buscamos soluções jurídicas eficazes, sempre pautadas na ética, transparência e comprometimento com cada cliente.
+                    </p>
+                    <p>
+                        Nosso objetivo é transformar problemas jurídicos em soluções reais, oferecendo segurança e acompanhamento próximo em todas as etapas do processo.
+                    </p>
+                    <a href="https://wa.me/5511930151283?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20mais%20sobre%20o%20escrit%C3%B3rio." target="_blank" class="btn btn-outline">
+                        <span>CONHECER MAIS SOBRE O ESCRITÓRIO</span>
+                        <span class="arrow">&rarr;</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-info">
-                <h3>Bratefiche Teiga Advocacia</h3>
-                <p>OAB/UF XX.XXX</p>
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="gold-line"></span>
+                <h2>POR QUE ESCOLHER NOSSO ESCRITÓRIO?</h2>
+                <span class="gold-line"></span>
             </div>
-            <div class="footer-contact">
-                <p>Email: contato@brateficheteiga.com.br</p>
-                <p>WhatsApp: (11) 93015-1283</p>
-                <p>Atendimento em todo o Brasil</p>
+
+            <div class="why-grid">
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 14c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z" />
+                        </svg>
+                    </div>
+                    <h3>ATENDIMENTO HUMANIZADO</h3>
+                </div>
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>ESTRATÉGIA JURÍDICA PERSONALIZADA</h3>
+                </div>
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>TRANSPARÊNCIA TOTAL</h3>
+                </div>
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>ATENDIMENTO ONLINE E PRESENCIAL</h3>
+                </div>
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v4l3 3" />
+                        </svg>
+                    </div>
+                    <h3>AGILIDADE NO ATENDIMENTO</h3>
+                </div>
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <path d="M22 4L12 14.01l-3-3" stroke="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>FOCO EM RESULTADOS</h3>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Bratefiche Teiga Advocacia. Todos os direitos reservados.</p>
+    </section>
+
+    <!-- Social Proof and Stats Section (Dark Theme) -->
+    <section class="social-proof" id="depoimentos">
+        <div class="container">
+            <div class="social-grid">
+                <!-- Testimonials Stack -->
+                <div class="testimonials-column">
+                    <div class="section-header dark left animate-on-scroll">
+                        <h2>QUEM BUSCA SEUS DIREITOS MERECE SER OUVIDO.</h2>
+                    </div>
+
+                    <div class="testimonial-cards">
+                        <!-- Card 1 -->
+                        <div class="testimonial-card animate-on-scroll">
+                            <div class="stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="quote">
+                                "Excelente profissional! Me orientou durante todo o processo e conquistamos uma ótima vitória."
+                            </p>
+                            <span class="client-name">Mariana S.</span>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="testimonial-card animate-on-scroll">
+                            <div class="stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="quote">
+                                "Atendimento humanizado e muito competente. Recomendo de olhos fechados!"
+                            </p>
+                            <span class="client-name">Carlos A.</span>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="testimonial-card animate-on-scroll">
+                            <div class="stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="quote">
+                                "Profissional dedicada, atenciosa e muito responsável. A melhor escolha que fiz!"
+                            </p>
+                            <span class="client-name">Juliana P.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Column -->
+                <div class="stats-column animate-on-scroll">
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z" />
+                                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="var(--gold)"/>
+                            </svg>
+                        </div>
+                        <div class="stat-number">+ 1.200</div>
+                        <div class="stat-label">CLIENTES ATENDIDOS</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M9 17h6M9 12h6M9 7h6" stroke="var(--gold)"/>
+                            </svg>
+                        </div>
+                        <div class="stat-number">+ 950</div>
+                        <div class="stat-label">PROCESSOS EM ANDAMENTO</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                                <path d="M22 4L12 14.01l-3-3" stroke="var(--gold)"/>
+                            </svg>
+                        </div>
+                        <div class="stat-number">+ 85%</div>
+                        <div class="stat-label">DE CASOS COM RESULTADOS POSITIVOS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Footer CTA Section -->
+    <section class="pre-footer-cta">
+        <div class="container">
+            <div class="cta-banner animate-on-scroll">
+                <div class="cta-left">
+                    <div class="cta-logo">JB</div>
+                    <div class="cta-text">
+                        <h2>NÃO ESPERE PERDER AINDA MAIS DIREITOS.</h2>
+                        <p>Fale agora com uma advogada especialista e receba orientação jurídica estratégica para o seu caso.</p>
+                    </div>
+                </div>
+                <div class="cta-right">
+                    <a href="https://wa.me/5511930151283?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20uma%20advogada%20agora." target="_blank" class="btn btn-primary btn-cta">
+                        <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                        </svg>
+                        <span>ATENDIMENTO IMEDIATO NO WHATSAPP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo -->
+                <div class="footer-col about-col">
+                    <a href="#inicio" class="logo">
+                        <img src="assets/images/logo.png" alt="Joyce Bratefiche Advocacia" class="logo-img">
+                    </a>
+                    <p class="tagline">Direitos que são seus, conquistas que transformam.</p>
+                </div>
+
+                <!-- Column 2: Contact Info -->
+                <div class="footer-col contact-col">
+                    <h3>CONTATO</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" class="footer-icon">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
+                            </svg>
+                            <a href="https://wa.me/5511930151283?text=Ol%C3%A1" target="_blank">(11) 93015-1283</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" class="footer-icon">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6" stroke="var(--gold)"/>
+                            </svg>
+                            <a href="mailto:contato@joycebratefiche.com.br">contato@joycebratefiche.com.br</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" class="footer-icon">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" stroke="var(--gold)"/>
+                            </svg>
+                            <span>São Paulo - SP | Atendimento em todo o Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social Media -->
+                <div class="footer-col social-col">
+                    <h3>SIGA-NOS</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" class="footer-icon">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="var(--gold)" stroke-width="2"/>
+                            </svg>
+                            <a href="https://instagram.com/joycebratefiche.adv" target="_blank">@joycebratefiche.adv</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Expertise Quick Links -->
+                <div class="footer-col links-col">
+                    <h3>ÁREAS DE ATUAÇÃO</h3>
+                    <ul class="contact-list">
+                        <li><a href="#atuacao">Direito Trabalhista</a></li>
+                        <li><a href="#atuacao">Direito Cível</a></li>
+                        <li><a href="#atuacao">Direito Previdenciário</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Joyce Bratefiche Advocacia & Consultoria Jurídica - Todos os direitos reservados | OAB/SP 000.000</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Menu Mobile Toggle
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const navMenu = document.getElementById('nav-menu');
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        &uarr;
+    </button>
 
-            mobileToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-
-            // Fechar menu mobile ao clicar em um link
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                    }
-                });
-            });
-
-            // Smooth Scrolling para âncoras
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        // Compensar o header fixo (aprox 70px)
-                        const headerOffset = 70;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
